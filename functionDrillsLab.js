@@ -258,7 +258,21 @@ let bigOrSmallArray = [1, 101, 102, 2, 103, 4, 5, 6, 107];
   Return the answers array inside of the function to a variable called `arrayEvaluator`.
 */
 
-//CODE HERE
+const bigOrSmall = (arr) => {
+  let answers = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers[i] = "big";
+    } else {
+      answers[i] = "small";
+    }
+  }
+  return (arrayEvaluator = answers);
+};
+
+arrayEvaluator = bigOrSmall(bigOrSmallArray);
+
+console.log(arrayEvaluator);
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = [
@@ -278,7 +292,18 @@ let loser = "Glimmer";
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
-//CODE HERE
+const theEliminator = (contestants, loser) => {
+  for (let i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      contestants.splice(i, 1);
+      i--;
+    }
+  }
+  return contestants;
+};
+
+const newList = theEliminator(contestants, loser);
+console.log(newList);
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo.";
@@ -287,7 +312,11 @@ let sampleString = "Hi, my name is Kylo.";
   Invoke the function, passing in the sampleString (above).
 */
 
-//CODE HERE
+const printUpperCase = (str) => {
+  console.log(str.toUpperCase());
+};
+
+printUpperCase(sampleString);
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -299,6 +328,19 @@ let sampleString = "Hi, my name is Kylo.";
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+
+const emailCheck = (email) => {
+  email = String(email);
+  email = email.trim();
+  if (email.includes("@")) {
+    return "email verified";
+  } else {
+    return "must provide a valid email address";
+  }
+};
+
+const validEmail = emailCheck("alex@gmail.com");
+console.log(validEmail);
 
 ////////////////// PROBLEM 19 ////////////////////
 /*
